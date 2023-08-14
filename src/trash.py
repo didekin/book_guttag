@@ -1,7 +1,12 @@
-list1 = ['a','b']
-list1.append('c')
-temp = list1[:]
-temp.reverse()
-print(list1)
-print(temp)
-print(list1 == temp)
+class IntSet(object):
+
+    def __init__(self, elems):
+        self._vals = elems
+
+    def get_members(self):
+        return self._vals[:]
+
+
+L1 = [1, 2, 3, 8]
+set1 = IntSet(L1)
+print(set1.get_members())

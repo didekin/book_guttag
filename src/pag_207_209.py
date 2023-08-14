@@ -24,6 +24,9 @@ class IntSet(object):
             self.insert(j)
         return self
 
+    def __add__(self, other):
+        return self.union(other)
+
 
 L1 = [1, 2, 3, 8]
 L2 = [8, 9]
@@ -32,3 +35,4 @@ s2 = IntSet().add_list(L2)
 print(s1.get_members())
 print(s2.get_members())
 print(s1.union(s2).get_members())
+print((s1 + s2).get_members())
