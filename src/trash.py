@@ -1,12 +1,15 @@
-class IntSet(object):
+class Infohiding(object):
+    def __init__(self):
+        self.__visible__ = 'Visible'
 
-    def __init__(self, elems):
-        self._vals = elems
+    def printvisible(self):
+        print(self.__visible__)
 
-    def get_members(self):
-        return self._vals[:]
+    def __printinvisible__(self):
+        print(self.__visible__)
 
 
-L1 = [1, 2, 3, 8]
-set1 = IntSet(L1)
-print(set1.get_members())
+test1 = Infohiding()
+print(test1.__visible__)
+test1.printvisible()
+test1.__printinvisible__()
