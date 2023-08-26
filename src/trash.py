@@ -1,9 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
-plt.plot([1, 2, 3, 4], [1, 7, 3, 5])
-plt.savefig('fig_1')
-# plt.show()
-
-
-# %%
-print('hola')
+aa = np.array([11] * 5)
+print(aa)
