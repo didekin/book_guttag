@@ -1,7 +1,8 @@
-def increment(n):
-    n += 1
+n = 4
+u = None
 
-
-compteur = 10
-increment(compteur)
-print(compteur)
+if 'a' in 'spam':
+    if n == 10:
+        print('non')
+else:
+    print('oui')
