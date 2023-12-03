@@ -1,8 +1,6 @@
-n = 4
-u = None
+def f(*args):
+    print(args)
 
-if 'a' in 'spam':
-    if n == 10:
-        print('non')
-else:
-    print('oui')
+
+L = [1, 2, 'a']
+f(*L)
