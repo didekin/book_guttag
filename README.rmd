@@ -1,2 +1,5 @@
 A repository with the answers to most of the finger exercises in John Guttag's book
 'Introduction to Computation and Programming Using Python', 3rd edition.
+
+It also contains most of the exercises of my certified MOOC 'Python Des fondamentaux aux concepts avancés du langage',
+[Université Côte d'Azur and Inria].
