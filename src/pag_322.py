@@ -71,7 +71,8 @@ def test_bfs():
     g.add_edge(Edge(nodes[1], nodes[0]))
     g.add_edge(Edge(nodes[3], nodes[1]))
     g.add_edge(Edge(nodes[4], nodes[0]))
-    bfs = BFS(g, nodes[0],nodes[5])
+    bfs = BFS(g, nodes[0], nodes[5])
     print('Shortest BSF path', print_path(bfs))
+
 
 test_bfs()
