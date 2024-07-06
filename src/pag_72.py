@@ -17,4 +17,3 @@ while root ** pwd < abs(x):
     pwd = 2
 if not withpower:
     print(f"Number {x} has no power")
-
