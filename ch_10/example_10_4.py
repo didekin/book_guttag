@@ -32,6 +32,9 @@ class Mortgage(object):
     def get_outstanding(self):
         return self._outstanding
 
+    def get_paid(self):
+        return self._paid
+
     def get_payment(self):
         return self._payment
 
@@ -56,7 +59,7 @@ class FixedWithPoints(Mortgage):
     def __init__(self, loan, r, months, pts):
         Mortgage.__init__(self, loan, r, months)
         self.pts = pts
-        self.paid = [loan * (pts / 100)]
+        self._paid = [loan * (pts / 100)]
         self.legend = 'Fixed, {0:.1f}%, {1} points'.format(r * 100, pts)
 
 
@@ -67,7 +70,7 @@ class TwoRate(Mortgage):
         self.teaser_rate = teaser_rate
         self.nextRate = r / 12
         self.legend = ('{0:.1f}% for '.format(teaser_rate * 100) +
-                       '{0} months, then {1:.1f}%'.format(teaser_months, (100 * r - 1) * 100))
+                       '{0} months, then {1:.1f}%'.format(teaser_months, (100 * r)))
 
     def make_payment(self):
         if len(self._paid) == self.teaser_months + 1:
@@ -75,6 +78,7 @@ class TwoRate(Mortgage):
         self._payment = find_payment(self._outstanding[-1],
                                      self._month_rate,
                                      self.months - self.teaser_months)
+
         Mortgage.make_payment(self)
 
 
@@ -91,8 +95,3 @@ def compare_mortgages(amt, years, fixed_rate, pts, pts_rate,
     for m in morts:
         print(m)
         print('  Total payments = ${0:,.0f}'.format(m.get_total_paid()))
-
-
-compare_mortgages(amt=200000, years=30, fixed_rate=0.035,
-                  pts=2, pts_rate=0.03, var_rate1=0.03,
-                  var_rate2=0.05, var_months=60)
