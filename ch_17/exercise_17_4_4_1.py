@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-import guttag_module as gu
+from modules import guttag_module as gu
 
 
 def dice_success(trialsIn, successesIn):

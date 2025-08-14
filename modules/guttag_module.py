@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
+
 def fibonannci_gen(n):
-    print(f'number computed: {n}')
     if n == 1 or n == 0:
         return 1
     else:
@@ -15,3 +16,9 @@ def factorial(nIn):
 
 def combinations(trials, successes):
     return factorial(trials) / (factorial(successes) * factorial(trials - successes))
+
+
+if __name__ == '__main__':
+    print(__name__, 'running the module file')
+else:
+    print(__name__, 'running file importing the module')

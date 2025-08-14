@@ -1,4 +1,4 @@
-import guttag_module as fib
+from modules import guttag_module as fib
 
 counter = 0
-fib.fibonannci_gen(5)
+fb_numbers = fib.fibonannci_gen(5)
